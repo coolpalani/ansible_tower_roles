@@ -3,10 +3,10 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: frontend-scaler 
 spec:
-  scaleRef:
+  scaleTargetRef:
     kind: DeploymentConfig 
     name: "{{ apphostname }}"
-    apiVersion: v1 
+    apiVersion: apps/v1beta1 
     subresource: scale
   minReplicas: 1 
   maxReplicas: 5
